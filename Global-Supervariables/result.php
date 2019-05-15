@@ -23,6 +23,9 @@
     <li class="nav-item">
       <a class="nav-link" id="cookieGlobal-tab" data-toggle="tab" href="#cookieGlobal" role="tab" aria-controls="cookieGlobal" aria-selected="false">$_COOKIE</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" id="requestGlobal-tab" data-toggle="tab" href="#requestGlobal" role="tab" aria-controls="requestGlobal" aria-selected="false">$_REQUEST</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <!-- $_POST and $_GET -->
@@ -87,6 +90,21 @@
           echo "<p>cookie variable --> ".$_COOKIE['place']."</p>";
         }
       ?>
+      <br/>
+    </div>
+
+    <!-- $_REQUEST -->
+    <div class="tab-pane fade" id="requestGlobal" role="tabpanel" aria-labelledby="requestGlobal-tab">
+      <p>$_REQUEST variables : An associative array that by default contains the contents of $_GET, $_POST and $_COOKIE.</p>
+      <br/>
+      <!-- foreach: loop through the associative array ($_REQUEST) -->
+      <?php
+        foreach($_REQUEST as $key => $value) {
+      	   // Loop through an object, array, ...
+          echo "$key : $value <br/>";
+        }
+      ?>
+
       <br/>
     </div>
 
