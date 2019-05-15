@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,6 +16,9 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" id="serverGlobal-tab" data-toggle="tab" href="#serverGlobal" role="tab" aria-controls="serverGlobal" aria-selected="false">$_SERVER</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="sessionGlobal-tab" data-toggle="tab" href="#sessionGlobal" role="tab" aria-controls="sessionGlobal" aria-selected="false">$_SESSION</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
@@ -41,8 +48,8 @@
       <br/>
     </div>
 
+    <!-- $_SERVER -->
     <div class="tab-pane fade" id="serverGlobal" role="tabpanel" aria-labelledby="serverGlobal-tab">
-      <!-- $_SERVER -->
       <p>$_SERVER variables :</p>
       <br/>
       <p>$_SERVER['SCRIPT_NAME'] --> <?php echo $_SERVER['SCRIPT_NAME']; ?></p>
@@ -56,6 +63,15 @@
       <p>$_SERVER['SCRIPT_FILENAME'] --> <?php echo $_SERVER['SCRIPT_FILENAME']; ?></p>
       <p>$_SERVER['SERVER_PORT'] --> <?php echo $_SERVER['SERVER_PORT']; ?></p>
       <p>$_SERVER['SCRIPT_URI'] --> <?php echo $_SERVER['SCRIPT_URI']; ?></p>
+      <br/>
+    </div>
+
+    <!-- $_SESSION -->
+    <div class="tab-pane fade" id="sessionGlobal" role="tabpanel" aria-labelledby="sessionGlobal-tab">
+      <p>$_SESSION variables :</p>
+      <br/>
+      <p>$_SESSION['actor'] --> <?php echo $_SESSION['actor']; ?></p>
+      <p>$_SESSION['actress'] --> <?php echo $_SESSION['actress']; ?></p>
       <br/>
     </div>
 
