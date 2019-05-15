@@ -104,12 +104,15 @@
       <p>$_REQUEST variables : An associative array that by default contains the contents of $_GET, $_POST and $_COOKIE.</p>
       <br/>
       <!-- foreach: loop through the associative array ($_REQUEST) -->
-      <?php
-        foreach($_REQUEST as $key => $value) {
-      	   // Loop through an object, array, ...
-          echo "$key : $value <br/>";
-        }
-      ?>
+      <table>
+      <?php foreach($_REQUEST as $key => $value): ?>
+      <tr>
+	      <td><?php echo $key; ?></td>
+	      <td><?php echo $value; ?></td>
+      </tr>
+      <?php endforeach; ?>
+      </table>
+
       <br/>
     </div>
 
@@ -118,12 +121,15 @@
       <p>$_FILES variables : An associative array of items uploaded to the current script via the HTTP POST method</p>
       <br/>
       <!-- foreach: loop through the associative array ($_FILES) -->
-      <?php
-        foreach($_FILES as $key => $value) {
-      	   // Loop through an object, array, ...
-          echo "$key : $value <br/>";
-        }
-      ?>
+      <table>
+      <?php foreach($_FILES as $key => $value): ?>
+      <tr>
+	      <td><?php echo $key; ?></td>
+	      <td><?php echo $value; ?></td>
+      </tr>
+      <?php endforeach; ?>
+      </table>
+
       <br/>
     </div>
 
@@ -131,13 +137,18 @@
     <div class="tab-pane fade" id="envGlobal" role="tabpanel" aria-labelledby="envGlobal-tab">
       <p>$_ENV variables : An associative array of variables passed to the current script via the environment method</p>
       <br/>
-      <!-- foreach: loop through the associative array ($_FILES) -->
-      <?php
-        foreach($_ENV as $key => $value) {
-      	   // Loop through an object, array, ...
-          echo "$key : $value <br/>";
-        }
-      ?>
+      <!-- foreach: loop through the associative array ($_ENV) -->
+      <!-- Loop through the data and post it in a table (as key => value)-->
+
+      <table>
+      <?php foreach($_ENV as $key => $value): ?>
+      <tr>
+	      <td><?php echo $key; ?></td>
+	      <td><?php echo $value; ?></td>
+      </tr>
+      <?php endforeach; ?>
+      </table>
+
       <br/>
     </div>
 
