@@ -3,6 +3,10 @@
 
   $_SESSION['actor']="Pierce Brosnan";
   $_SESSION['actress']="Julia Roberts";
+
+  $place="Hollywood";
+  setcookie("place",$place,time()+86400,'/');
+
 ?>
 
 <html>

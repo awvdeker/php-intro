@@ -20,6 +20,9 @@
     <li class="nav-item">
       <a class="nav-link" id="sessionGlobal-tab" data-toggle="tab" href="#sessionGlobal" role="tab" aria-controls="sessionGlobal" aria-selected="false">$_SESSION</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" id="cookieGlobal-tab" data-toggle="tab" href="#cookieGlobal" role="tab" aria-controls="cookieGlobal" aria-selected="false">$_COOKIE</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <!-- $_POST and $_GET -->
@@ -72,6 +75,18 @@
       <br/>
       <p>$_SESSION['actor'] --> <?php echo $_SESSION['actor']; ?></p>
       <p>$_SESSION['actress'] --> <?php echo $_SESSION['actress']; ?></p>
+      <br/>
+    </div>
+
+    <!-- $_COOKIE -->
+    <div class="tab-pane fade" id="cookieGlobal" role="tabpanel" aria-labelledby="cookieGlobal-tab">
+      <p>$_COOKIE variables :</p>
+      <br/>
+      <?php
+        if (isset($_COOKIE['place'])){
+          echo "<p>cookie variable --> ".$_COOKIE['place']."</p>";
+        }
+      ?>
       <br/>
     </div>
 
