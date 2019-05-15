@@ -5,47 +5,66 @@
 </head>
 <body>
 <div class="container">
-  <!-- $_POST and $_GET -->
-  <p>Variables sent via POST<p>
-  <p>Top 5 Tv shows</p>
-  <ol>
-    <li><?php echo $_POST["tvshow1"]; ?></li>
-    <li><?php echo $_POST["tvshow2"]; ?></li>
-    <li><?php echo $_POST["tvshow3"]; ?></li>
-    <li><?php echo $_POST["tvshow4"]; ?></li>
-    <li><?php echo $_POST["tvshow5"]; ?></li>
-  </ol>
-  <p>Top 5 Movies</p>
-  <ol>
-    <li><?php echo $_POST["movie1"]; ?></li>
-    <li><?php echo $_POST["movie2"]; ?></li>
-    <li><?php echo $_POST["movie3"]; ?></li>
-    <li><?php echo $_POST["movie4"]; ?></li>
-    <li><?php echo $_POST["movie5"]; ?></li>
-  </ol>
-  <br/>
-  <p>Variables sent via GET<p>
-  <p>Favourite Country : <?php echo $_GET["favouritecountry"]; ?></p>
-  <p>Worst movie ever seen : <?php echo $_GET["worstmovie"]; ?></p>
-  <br/>
+  <!-- tabs with javascript plug in to display certain divs -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" id="postGet-tab" data-toggle="tab" href="#postGet" role="tab" aria-controls="postGet" aria-selected="true">POST and GET</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="serverGlobal-tab" data-toggle="tab" href="#serverGlobal" role="tab" aria-controls="serverGlobal" aria-selected="false">$_SERVER</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <!-- $_POST and $_GET -->
+    <div class="tab-pane fade" id="postGet" role="tabpanel" aria-labelledby="postGet-tab">
+      <p>Variables sent via POST<p>
+      <p>Top 5 Tv shows</p>
+      <ol>
+        <li><?php echo $_POST["tvshow1"]; ?></li>
+        <li><?php echo $_POST["tvshow2"]; ?></li>
+        <li><?php echo $_POST["tvshow3"]; ?></li>
+        <li><?php echo $_POST["tvshow4"]; ?></li>
+        <li><?php echo $_POST["tvshow5"]; ?></li>
+      </ol>
+      <p>Top 5 Movies</p>
+      <ol>
+        <li><?php echo $_POST["movie1"]; ?></li>
+        <li><?php echo $_POST["movie2"]; ?></li>
+        <li><?php echo $_POST["movie3"]; ?></li>
+        <li><?php echo $_POST["movie4"]; ?></li>
+        <li><?php echo $_POST["movie5"]; ?></li>
+      </ol>
+      <br/>
+      <p>Variables sent via GET<p>
+      <p>Favourite Country : <?php echo $_GET["favouritecountry"]; ?></p>
+      <p>Worst movie ever seen : <?php echo $_GET["worstmovie"]; ?></p>
+      <br/>
+    </div>
 
-  <!-- //$_SERVER -->
-  <p>$_SERVER variables :</p>
-  <br/>
-  <p>$_SERVER['SCRIPT_NAME'] --> <?php echo $_SERVER['SCRIPT_NAME']; ?></p>
-  <p>$_SERVER['HTTP_HOST'] --> <?php echo $_SERVER['HTTP_HOST']; ?></p>
-  <p>$_SERVER['PHP_SELF'] --> <?php echo $_SERVER['PHP_SELF']; ?></p>
-  <p>$_SERVER['SERVER_ADDR'] --> <?php echo $_SERVER['SERVER_ADDR']; ?></p>
-  <p>$_SERVER['SERVER_NAME'] --> <?php echo $_SERVER['SERVER_NAME']; ?></p>
-  <p>$_SERVER['REMOTE_ADDR'] --> <?php echo $_SERVER['REMOTE_ADDR']; ?></p>
-  <p>$_SERVER['REMOTE_HOST'] --> <?php echo $_SERVER['REMOTE_HOST']; ?></p>
-  <p>$_SERVER['REMOTE_PORT'] --> <?php echo $_SERVER['REMOTE_PORT']; ?></p>
-  <p>$_SERVER['SCRIPT_FILENAME'] --> <?php echo $_SERVER['SCRIPT_FILENAME']; ?></p>
-  <p>$_SERVER['SERVER_PORT'] --> <?php echo $_SERVER['SERVER_PORT']; ?></p>
-  <p>$_SERVER['SCRIPT_URI'] --> <?php echo $_SERVER['SCRIPT_URI']; ?></p>
-  <br/>
+    <div class="tab-pane fade" id="serverGlobal" role="tabpanel" aria-labelledby="serverGlobal-tab">
+      <!-- $_SERVER -->
+      <p>$_SERVER variables :</p>
+      <br/>
+      <p>$_SERVER['SCRIPT_NAME'] --> <?php echo $_SERVER['SCRIPT_NAME']; ?></p>
+      <p>$_SERVER['HTTP_HOST'] --> <?php echo $_SERVER['HTTP_HOST']; ?></p>
+      <p>$_SERVER['PHP_SELF'] --> <?php echo $_SERVER['PHP_SELF']; ?></p>
+      <p>$_SERVER['SERVER_ADDR'] --> <?php echo $_SERVER['SERVER_ADDR']; ?></p>
+      <p>$_SERVER['SERVER_NAME'] --> <?php echo $_SERVER['SERVER_NAME']; ?></p>
+      <p>$_SERVER['REMOTE_ADDR'] --> <?php echo $_SERVER['REMOTE_ADDR']; ?></p>
+      <p>$_SERVER['REMOTE_HOST'] --> <?php echo $_SERVER['REMOTE_HOST']; ?></p>
+      <p>$_SERVER['REMOTE_PORT'] --> <?php echo $_SERVER['REMOTE_PORT']; ?></p>
+      <p>$_SERVER['SCRIPT_FILENAME'] --> <?php echo $_SERVER['SCRIPT_FILENAME']; ?></p>
+      <p>$_SERVER['SERVER_PORT'] --> <?php echo $_SERVER['SERVER_PORT']; ?></p>
+      <p>$_SERVER['SCRIPT_URI'] --> <?php echo $_SERVER['SCRIPT_URI']; ?></p>
+      <br/>
+    </div>
 
+  </div>
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
