@@ -29,6 +29,9 @@
     <li class="nav-item">
       <a class="nav-link" id="filesGlobal-tab" data-toggle="tab" href="#filesGlobal" role="tab" aria-controls="filesGlobal" aria-selected="false">$_FILES</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" id="envGlobal-tab" data-toggle="tab" href="#envGlobal" role="tab" aria-controls="envGlobal" aria-selected="false">$_ENV</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <!-- $_POST and $_GET -->
@@ -117,6 +120,20 @@
       <!-- foreach: loop through the associative array ($_FILES) -->
       <?php
         foreach($_FILES as $key => $value) {
+      	   // Loop through an object, array, ...
+          echo "$key : $value <br/>";
+        }
+      ?>
+      <br/>
+    </div>
+
+    <!-- $_ENV -->
+    <div class="tab-pane fade" id="envGlobal" role="tabpanel" aria-labelledby="envGlobal-tab">
+      <p>$_ENV variables : An associative array of variables passed to the current script via the environment method</p>
+      <br/>
+      <!-- foreach: loop through the associative array ($_FILES) -->
+      <?php
+        foreach($_ENV as $key => $value) {
       	   // Loop through an object, array, ...
           echo "$key : $value <br/>";
         }
