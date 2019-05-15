@@ -26,6 +26,9 @@
     <li class="nav-item">
       <a class="nav-link" id="requestGlobal-tab" data-toggle="tab" href="#requestGlobal" role="tab" aria-controls="requestGlobal" aria-selected="false">$_REQUEST</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" id="filesGlobal-tab" data-toggle="tab" href="#filesGlobal" role="tab" aria-controls="filesGlobal" aria-selected="false">$_FILES</a>
+    </li>
   </ul>
   <div class="tab-content" id="myTabContent">
     <!-- $_POST and $_GET -->
@@ -104,7 +107,20 @@
           echo "$key : $value <br/>";
         }
       ?>
+      <br/>
+    </div>
 
+    <!-- $_FILES -->
+    <div class="tab-pane fade" id="filesGlobal" role="tabpanel" aria-labelledby="filesGlobal-tab">
+      <p>$_FILES variables : An associative array of items uploaded to the current script via the HTTP POST method</p>
+      <br/>
+      <!-- foreach: loop through the associative array ($_FILES) -->
+      <?php
+        foreach($_FILES as $key => $value) {
+      	   // Loop through an object, array, ...
+          echo "$key : $value <br/>";
+        }
+      ?>
       <br/>
     </div>
 
