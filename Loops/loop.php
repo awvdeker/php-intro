@@ -19,17 +19,19 @@ $array = [
   <th>rating</th>
 </tr>
 
+
 <?php
 foreach($array as $arr):
 ?>
 
 <tr>
-	<td><?php echo $arr["tv-show"]; ?></td>
+	<td><a target="_blank" href="http://www.google.com/search?q=<?echo $arr["tv-show"]; ?>"><?php echo $arr["tv-show"]; ?></a></td>
 	<td><?php echo $arr["rating"]; ?></td>
 </tr>
 
 <?php
 endforeach;
 ?>
+
 
 </table>
