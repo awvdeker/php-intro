@@ -4,9 +4,9 @@
 
 // 129409
 
-$pizza="&#1F355;";
-$hamburger="&#1F354;";
-$fries="&#1F35F;";
+$pizza="&#x1F355;";
+$hamburger="&#x1F354;";
+$fries="&#x1F35F;";
 
 //computer kiest emoji
 
