@@ -26,7 +26,19 @@ foreach($array as $arr):
 
 <tr>
 	<td><a target="_blank" href="http://www.google.com/search?q=<?echo $arr["tv-show"]; ?>"><?php echo $arr["tv-show"]; ?></a></td>
-	<td><?php echo $arr["rating"]; ?></td>
+	<td>
+		<?php
+			for ($i=1;$i<=$arr["rating"];$i++){
+		?>
+		<img src="star.png" height="42" width="42">
+		<?php
+			}
+
+			//echo $arr["rating"];
+
+		?>
+
+	</td>
 </tr>
 
 <?php
