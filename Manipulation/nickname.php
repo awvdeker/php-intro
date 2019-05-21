@@ -47,7 +47,16 @@ $index=rand(0 , (strlen($nickname)-1) );
 $nickname[$index]= strtolower($nickname[$index]) ^ strtoupper($nickname[$index]) ^ $nickname[$index];
 echo "9. Capitalize one more random character in the name <br/>(if the character is already capitalized, it should be de-capitalized) - ".$nickname."<br/>";
 
+$i=0;
+$arr_str = str_split($nickname);
+//var_dump($arr_str);
+foreach ($arr_str as $char){
+  $nicknameColor.='<span style="color:rgb('.(255-($i*15)).',0,0);">'.$char.'</span>';
+  $i++;
+}
 
+echo "With color gradient : ".$nicknameColor;
+//echo '<span style="color:rgb(255,0,0);">'.$nickname.'</span>';
   ?>
 
 </body>
