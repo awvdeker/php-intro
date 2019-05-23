@@ -41,6 +41,20 @@ foreach ($_SESSION as $key => $value){
   $myObj->{$key}=$value;
 }
 
+//Write an if-statement that has a 20% chance to edit a random item of one of the above
+$C="Jan";
+$D="40";
+
+if (rand(1,100)<=20){
+  $randomIndex=rand(0,(count($myArr)-1));
+  $oldKey=$myArr[$randomIndex];
+  $myArr[$randomIndex]=$C;
+  $myAssArr[$C]=$D;
+  unset($myAssArr[$oldKey]);
+  $myObj->$C=$D;
+  unset($myObj->$oldKey);
+}
+
 var_dump($myArr,$myAssArr,$myObj);
 
 ?>
