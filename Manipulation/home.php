@@ -42,17 +42,34 @@ foreach ($_SESSION as $key => $value){
 }
 
 //Write an if-statement that has a 20% chance to edit a random item of one of the above
+
+//Put this if statement in a loop so every array/object has a random chance of having a random item changed
+
 $C="Jan";
 $D="40";
 
-if (rand(1,100)<=20){
-  $randomIndex=rand(0,(count($myArr)-1));
-  $oldKey=$myArr[$randomIndex];
-  $myArr[$randomIndex]=$C;
-  $myAssArr[$C]=$D;
-  unset($myAssArr[$oldKey]);
-  $myObj->$C=$D;
-  unset($myObj->$oldKey);
+for ($i=0;$i<3;$i++){
+  if (rand(1,100)<=rand(1,100)){
+    $randomIndex=rand(0,(count($myArr)-1));
+    $oldKey=$myArr[$randomIndex];
+    switch ($i){
+      case 0:
+        $randomIndex=rand(0,(count($myArr)-1));
+        $myArr[$randomIndex]=$C;
+        break;
+      case 1:
+        $randKey = array_rand($myAssArr, 1);
+        unset($myAssArr[$randKey]);
+        $myAssArr[$C]=$D;
+        break;
+      case 2:
+        $randKey = array_rand((array)$myObj);
+        unset($myObj->$randKey);
+        $myObj->{$C}=$D;
+    }
+
+  }
+
 }
 
 var_dump($myArr,$myAssArr,$myObj);
