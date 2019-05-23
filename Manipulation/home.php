@@ -1,22 +1,46 @@
 <?php
+session_start();
+
 $myArr=array("Samuel","Nathan","David","Simon");
 $myAssArr=array("Samuel"=>"35","Nathan"=>"33","David"=>"32","Simon"=>"30");
+$myObj=(object)$myAssArr;
+
+/*
+$foo = (array)$foo;
+$foo['bar'] = '1234';
+$foo = (object)$foo;
+*/
+/*
 class MyClass{
-  public $name;
   public $age;
 }
-$nephewOne=new MyClass();
-$nephewOne->name="Samuel";
-$nephewOne->age="35";
-$nephewTwo=new MyClass();
-$nephewTwo->name="Nathan";
-$nephewTwo->age="33";
-$nephewThree=new MyClass();
-$nephewThree->name="David";
-$nephewThree->age="32";
-$nephewFour=new MyClass();
-$nephewFour->name="Simon";
-$nephewFour->age="30";
+$Samuel=new MyClass();
+$Samuel->age="35";
+$Nathan=new MyClass();
+$Nathan->age="33";
+$David=new MyClass();
+$David->age="32";
+$Simon=new MyClass();
+$Simon->age="30";
+*/
 
+//Write a for-loop that adds an item to all of the above
+
+$A="Alexander";
+$B="34";
+
+$_SESSION[$A]=$B;
+$_SESSION["Elisabeth"]="31";
+$_SESSION["Matthias"]="29";
+$_SESSION["Thomas"]="27";
+
+foreach ($_SESSION as $key => $value){
+  //add item to array
+  array_push($myArr, $key);
+  $myAssArr[$key]=$value;
+  $myObj->{$key}=$value;
+}
+
+var_dump($myArr,$myAssArr,$myObj);
 
 ?>
