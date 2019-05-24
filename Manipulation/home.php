@@ -84,33 +84,52 @@ if ($len>1){
   $secondhalf = null;
 }
 
+/*
 var_dump($myArr,$myAssArr,$myObj);
 echo '<br/>';
 var_dump($firsthalf,$secondhalf);
 echo '<br/>';
+*/
 
 //Remove the last item of the associative array
 $removed = array_pop($myAssArr);
-
+/*
 var_dump($removed,$myAssArr);
 echo '<br/>';
-
+*/
 //Add the arrays to the object as arr1 and arr2
 
 $myObj->{"arr1"}=$myArr;
 $myObj->{"arr2"}=$myAssArr;
-
+/*
 var_dump($myObj);
 echo '<br/>';
-
+*/
 //Loop through the associative array adding all items to the object as key => value
 
 foreach ($myAssArr as $key => $value){
   $myObj->{$key}=$value;
 }
-
+/*
 var_dump($myObj);
 echo '<br/>';
+echo '<br/>';
+*/
+//Save the object in the $_COOKIE superglobal
+
+setcookie("myObject",serialize($myObj),time()+86400,'/');
+
+if (isset($_COOKIE["myObject"])) {
+  echo "cookie: <br/><br/>";
+  var_dump(unserialize($_COOKIE["myObject"]));
+}
+
+//setcookie ($name, serialize($object));   // set object
+//$object = unserialize($_COOKIE[$name]);   // get object
+
+//setcookie ($name, json_encode($object));   // set object stdClass
+//$object = json_decode($_COOKIE[$name]);   // get object stdClass
+
 
 
 ?>
