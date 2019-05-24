@@ -84,8 +84,17 @@ if ($len>1){
   $secondhalf = null;
 }
 
-
 var_dump($myArr,$myAssArr,$myObj);
 echo '<br/>';
 var_dump($firsthalf,$secondhalf);
+echo '<br/>';
+
+//Remove the last item of the associative array
+$removed = array_pop($myAssArr);
+
+var_dump($removed,$myAssArr);
+
+
+
+
 ?>
