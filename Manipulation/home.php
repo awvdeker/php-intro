@@ -93,8 +93,13 @@ echo '<br/>';
 $removed = array_pop($myAssArr);
 
 var_dump($removed,$myAssArr);
+echo '<br/>';
 
+//Add the arrays to the object as arr1 and arr2
 
+$myObj->{"arr1"}=$myArr;
+$myObj->{"arr2"}=$myAssArr;
 
+var_dump($myObj);
 
 ?>
