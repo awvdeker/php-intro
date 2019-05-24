@@ -101,5 +101,16 @@ $myObj->{"arr1"}=$myArr;
 $myObj->{"arr2"}=$myAssArr;
 
 var_dump($myObj);
+echo '<br/>';
+
+//Loop through the associative array adding all items to the object as key => value
+
+foreach ($myAssArr as $key => $value){
+  $myObj->{$key}=$value;
+}
+
+var_dump($myObj);
+echo '<br/>';
+
 
 ?>
