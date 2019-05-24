@@ -116,12 +116,17 @@ echo '<br/>';
 echo '<br/>';
 */
 //Save the object in the $_COOKIE superglobal
+//Find a way to print this final object on the homepage, in an easily readable way
+
+
 
 setcookie("myObject",serialize($myObj),time()+86400,'/');
 
 if (isset($_COOKIE["myObject"])) {
   echo "cookie: <br/><br/>";
-  var_dump(unserialize($_COOKIE["myObject"]));
+  echo "<pre>";
+  var_dump((array)unserialize($_COOKIE["myObject"]));
+  echo "</pre>";
 }
 
 //setcookie ($name, serialize($object));   // set object
@@ -129,7 +134,6 @@ if (isset($_COOKIE["myObject"])) {
 
 //setcookie ($name, json_encode($object));   // set object stdClass
 //$object = json_decode($_COOKIE[$name]);   // get object stdClass
-
 
 
 ?>
