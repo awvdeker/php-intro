@@ -72,6 +72,20 @@ for ($i=0;$i<3;$i++){
 
 }
 
-var_dump($myArr,$myAssArr,$myObj);
+//Divide the array in half (if uneven items half-1, unless half-1 makes it empty)
+$myArr[8]="Frederic";
 
+$len = count($myArr);
+if ($len>1){
+  $firsthalf = array_slice($myArr, 0, floor($len / 2));
+  $secondhalf = array_slice($myArr, floor($len / 2));
+} else {
+  $firsthalf = $myArr;
+  $secondhalf = null;
+}
+
+
+var_dump($myArr,$myAssArr,$myObj);
+echo '<br/>';
+var_dump($firsthalf,$secondhalf);
 ?>
