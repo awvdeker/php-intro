@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+
+<?php
+include 'functions.php';
+require 'security.php';
+
+if (isset($_POST['submit'])){
+
+if ($_POST['answer']=='yes'){
+
+  echo "<br/><br/>Generated nickname : <br/><br/>";
+  echo nickname_generate("futurebot");
+
+} elseif ($_POST['answer']=='no'){
+
+?>
+<div class="container">
     <div class="box">
       <button type="button">Generate object</button>
     </div>
@@ -22,8 +38,7 @@
 
 
 <?php
-require 'security.php';
-include 'functions.php';
+
 
 if (isset($_POST['username'])){
   echo "<br/><br/>Generated nickname : <br/><br/>";
@@ -31,8 +46,16 @@ if (isset($_POST['username'])){
 
 }
 
-
-
 ?>
 
 </body>
+
+<?php
+
+//end of elseif
+}
+
+//end of first if
+}
+
+?>
