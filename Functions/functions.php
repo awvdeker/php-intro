@@ -31,5 +31,28 @@ function nickname_generate($nickname){
   return $nickname;
 }
 
+function object_generate(){
+  //get object from cookie
+  //put object in session
+  $_SESSION['generatedObject']=$_COOKIE["myObject"];
+  //return object
+  return unserialize($_SESSION["generatedObject"]);
+}
+
+function object_revert($object){
+
+//REVERT OBJECT
+//
+//writ code here!!!!
+//
+
+//print object to homepage with <pre>
+  echo "<br/><br/>Print reverted object: <br/><br/>";
+  echo "<pre>";
+  var_dump((array)$object);
+  echo "</pre>";
+
+
+}
 
 ?>

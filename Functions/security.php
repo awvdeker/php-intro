@@ -7,6 +7,6 @@
     <p>Are you a bot from the future coming to exterminate the human race and are you just here for a cool nickname?</p>
     <input type="radio" name="answer" value="yes" /> Yes
     <input type="radio" name="answer" value="no" /> No
-    <input type="submit" name="submit" value="submit"/>
+    <input type="submit" name="submitSecurity" value="submit"/>
   </form>
 </div>
