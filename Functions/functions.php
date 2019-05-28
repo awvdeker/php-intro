@@ -44,6 +44,8 @@ function object_revert($object){
 //REVERT OBJECT
 //
 //writ code here!!!!
+
+//$newArray=array_merge($arr1,$arr2);
 //
 
 //print object to homepage with <pre>
